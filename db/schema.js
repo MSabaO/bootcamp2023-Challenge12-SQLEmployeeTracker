@@ -1,13 +1,13 @@
--- Drop the existing database if it exists
+// -- Drop the existing database if it exists 
 DROP DATABASE business_db;
 
--- Create a new database
+// -- Create a new database
 CREATE DATABASE business_db;
 
--- Use the newly created database
+// -- Use the newly created database
 USE business_db;
 
--- Create a 'departments' table
+// -- Create a 'departments' table
 CREATE TABLE departments (
     departmentId INT AUTO_INCREMENT PRIMARY KEY,
     departmentName VARCHAR(30) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE departments (
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- Create a 'roles' table
+// -- Create a 'roles' table
 CREATE TABLE roles (
     roleId INT AUTO_INCREMENT PRIMARY KEY,
     roleTitle VARCHAR(30) NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE roles (
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- Create an 'employees' table
+// -- Create an 'employees' table
 CREATE TABLE employees (
     employeeId INT AUTO_INCREMENT PRIMARY KEY,
     firstName VARCHAR(30) NOT NULL,
