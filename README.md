@@ -1,6 +1,6 @@
 # SQLEmployeeTracker
 
-# PENDING UPDATE
+## Not end product. NOt able to create the tables
 
 <br/>
 <p align="center">
@@ -30,12 +30,11 @@ SO THAT I can organize and plan my business<br>
 
 ## Built With
 - Node.js
-- Express.js
--HTML, CSS, JavaScript (Frontend)
+- Mysql
 
 
 ## How to install
-You can install this readme by cloning this repository in your terminal with the following url: https://github.com/MSabaO/bootcamp2023-Challenge11-NoteTaker.git. Once completed, type "npm init -y" in the console to install the node packages. <br>
+You can install this readme by cloning this repository in your terminal with the following url: https://github.com/MSabaO/bootcamp2023-Challenge12-SQLEmployeeTracker.git.  Once completed, type "npm init -y" in the console to install the node packages. <br>
 step by step
 npm init -y
 npm install

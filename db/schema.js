@@ -1,40 +1,23 @@
-// -- Drop the existing database if it exists 
-DROP DATABASE business_db;
-
-// -- Create a new database
-CREATE DATABASE business_db;
-
-// -- Use the newly created database
-USE business_db;
-
-// -- Create a 'departments' table
-CREATE TABLE departments (
-    departmentId INT AUTO_INCREMENT PRIMARY KEY,
-    departmentName VARCHAR(30) NOT NULL,
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+CREATE TABLE [IF NOT EXISTS] department (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL
 );
 
-// -- Create a 'roles' table
-CREATE TABLE roles (
-    roleId INT AUTO_INCREMENT PRIMARY KEY,
-    roleTitle VARCHAR(30) NOT NULL,
-    roleSalary DECIMAL(10, 2) NOT NULL,
-    departmentId INT NOT NULL,
-    FOREIGN KEY (departmentId) REFERENCES departments(departmentId),
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+CREATE TABLE [IF NOT EXISTS] role (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(30) NOT NULL,
+    salary DECIMAL(10, 2) NOT NULL,
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES department(id)
 );
 
-// -- Create an 'employees' table
-CREATE TABLE employees (
-    employeeId INT AUTO_INCREMENT PRIMARY KEY,
-    firstName VARCHAR(30) NOT NULL,
-    lastName VARCHAR(30) NOT NULL,
-    roleId INT NOT NULL,
-    managerId INT,
-    FOREIGN KEY (roleId) REFERENCES roles(roleId),
-    FOREIGN KEY (managerId) REFERENCES employees(employeeId),
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+CREATE TABLE [IF NOT EXISTS] employee (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    role_id INT,
+    manager_id INT,
+    salary DECIMAL(10, 2),
+    FOREIGN KEY (role_id) REFERENCES role(id),
+    FOREIGN KEY (manager_id) REFERENCES employee(id)
 );
