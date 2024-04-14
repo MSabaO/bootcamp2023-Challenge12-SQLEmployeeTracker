@@ -45,6 +45,8 @@ Once installed, open your terminal and navigate into the folder of this app. Wri
 <br>
 <b>Screenshot of the questions</b>
 ![alt text](image.png)
+<br><b>Link to video:</b> https://drive.google.com/file/d/1xeFfNQK9jZX3CIMvfb3PiEwqc5F0X_8_/view
+
 
 
 ## Contributions
